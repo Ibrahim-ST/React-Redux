@@ -8,7 +8,7 @@ const App = () => {
   const [todoEditing, setTodoEditing] = React.useState(null);
   const [editingText, setEditingText] = React.useState("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const json = localStorage.getItem("todos");
     const loadedTodos = JSON.parse(json);
     if (loadedTodos) {
@@ -16,7 +16,7 @@ const App = () => {
     }
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (todos.length > 0) {
         const json = JSON.stringify(todos);
         localStorage.setItem("todos", json);
